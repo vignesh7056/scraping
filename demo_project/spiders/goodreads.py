@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import scrapy
 from scrapy.loader import ItemLoader
 from demo_project.items import QuoteItem
@@ -7,7 +8,7 @@ class GoodReads(scrapy.Spider):
 
     def requests(self):
 
-        url = 'https://www.goodreads.com/quotes/page=2'
+        url = "https://www.goodreads.com/quotes/page=2"
         yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
